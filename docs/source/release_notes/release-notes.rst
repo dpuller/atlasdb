@@ -97,6 +97,16 @@ develop
          - Reduced the logging level of some messages relating to check-and-set operations in ``CassandraTimestampBoundStore`` to reduce noise in the logs.  These were designed to help debugging the ``MultipleRunningTimestampServicesException`` issues but we no longer require them to log all the time.
            (`Pull Request <https://github.com/palantir/atlasdb/pull/2048>`__)
 
+    *    - |devbreak|
+         - Removed unused classes.
+
+              - ``FutureClosableIteratorTask``
+              - ``ClosableMergedIterator``
+              - ``KvTableMappingService``
+              - ``ThrowingKeyValueService``
+
+           Even though these classes were not used by Palantir, they might be used by an external consumer. If any issues arise from this change, please contact the development team and we can revert this change.
+           (`Pull Request <https://github.com/palantir/atlasdb/pull/1933>`__)
 
 .. <<<<------------------------------------------------------------------------------------------------------------->>>>
 
